@@ -13,23 +13,35 @@ public class CrapsGame {
      */
     public int processRoll(int total) {
         int result;
-        switch (total) {
-            case 2:
-            case 3:
-            case 12:
-                result = -1;
-                point = 0;
-                break;
-            case 7:
-            case 11:
+        if (point == 0) {
+            switch (total) {
+                case 2:
+                case 3:
+                case 12:
+                    result = -1;
+                    point = 0;
+                    break;
+                case 7:
+                case 11:
+                    result = 1;
+                    point = 0;
+                    break;
+                default:
+                    result = 0;
+                    point = total;
+            }
+        } else {
+            if (point == total) {
                 result = 1;
                 point = 0;
-                break;
-            default:
+            } else if (total == 7) {
+                result = -1;
+                point = 0;
+            }
+            else {
                 result = 0;
-        }
-
-                return result;
+            }
+            return result;
         }
 
         /**
@@ -40,3 +52,4 @@ public class CrapsGame {
             return point;
         }
     }
+}
