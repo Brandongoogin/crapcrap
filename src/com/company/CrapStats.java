@@ -3,14 +3,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class CrapsStats extends JFrame
+public class CrapStats extends JFrame
         implements ActionListener
 {
     private CrapsGame game;
     private JTextField numberIn, statsOut;
 
     // Constructor
-    public CrapsStats()
+    public CrapStats()
     {
         super("Craps test");
 
@@ -56,7 +56,7 @@ public class CrapsStats extends JFrame
 
     public static void main(String args[])
     {
-        CrapsStats window = new CrapsStats();
+        CrapStats window = new CrapStats();
         window.setBounds(100, 100, 300, 100);
         window.setDefaultCloseOperation(EXIT_ON_CLOSE);
         window.setResizable(false);

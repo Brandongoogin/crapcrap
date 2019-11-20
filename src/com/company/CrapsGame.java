@@ -14,42 +14,37 @@ public class CrapsGame {
     public int processRoll(int total) {
         int result;
         if (point == 0) {
-            switch (total) {
-                case 2:
-                case 3:
-                case 12:
-                    result = -1;
-                    point = 0;
-                    break;
-                case 7:
-                case 11:
-                    result = 1;
-                    point = 0;
-                    break;
-                default:
-                    result = 0;
-                    point = total;
+            if (total == 2 || total == 3 || total == 12) {
+                result=-1;
+            } else if (total == 7 || total == 11) {
+                result=1;
+            } else {
+                point=total;
+                result=0;
             }
-        } else {
-            if (point == total) {
-                result = 1;
-                point = 0;
-            } else if (total == 7) {
-                result = -1;
-                point = 0;
-            }
-            else {
-                result = 0;
-            }
-            return result;
         }
+        else{
+            if (point==total){
+                result=1;
+                point=0;
+            }
+            else if(total==7){
+                result=-1;
+                point=0;
+            }
+            else{
+                result=0;
+            }
+        }
+        return result;
+    }
 
-        /**
-         *  Returns the saved point
-         */
-        public int getPoint()
-        {
-            return point;
-        }
+    /**
+     *  Returns the saved point
+     */
+    public int getPoint()
+    {
+        return point;
     }
 }
+
